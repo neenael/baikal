@@ -1,0 +1,294 @@
+@import "vars";
+html,
+body {
+  height: 100%;
+  font-family: "Colus";
+  background-color: #1370b5;
+}
+html {
+  scroll-behavior: smooth;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+.container {
+  max-width: 1655px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+footer {
+  padding: 30px 0;
+}
+
+.section {
+  padding: 50px 0;
+  position: relative;
+  z-index: 0;
+}
+.fixed_height_section {
+  height: 960px;
+}
+
+.main-button {
+  @extend %montserrat_text;
+  padding: 12px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  background: #ff6501;
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5);
+  margin-bottom: 7px;
+}
+
+.section__subtitle {
+  color: #fff;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.section__title {
+  color: #fff;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+.section__text {
+  @extend %montserrat_text;
+  // font-size: 18px;
+}
+
+.fullscreen_frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  img {
+    max-height: 100%;
+  }
+}
+
+.upper_frame_large {
+  @extend %upper_frame;
+  // width: 61%;
+  // min-width: 1047px;
+  width: 1166px;
+}
+.upper_content_large {
+  max-width: 788px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.upper_frame_medium {
+  @extend %upper_frame;
+  // width: 65%;
+  // min-width: 1095px;
+  width: 1200px;
+}
+.upper_content_medium {
+  max-width: 857px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.upper_frame_small {
+  @extend %upper_frame;
+  width: 59%;
+  min-width: 1075px;
+}
+.upper_content_small {
+  max-width: 788px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.lower_frame_small {
+  @extend %lower_frame;
+  width: 860px;
+  // min-width: 522px;
+  // max-width: 859px;
+}
+.lower_frame_medium {
+  @extend %lower_frame;
+  width: 1020px; // min-width: 522px;
+  // min-width: 852px;
+}
+.lower_content_medium {
+  max-width: 646px;
+  overflow: auto;
+  text-align: right;
+}
+.lower_frame_large {
+  @extend %lower_frame;
+  width: 1020px;
+  // min-width: 973px;
+  // width: 45%;
+  // min-width: 522px;
+}
+.lower_content_large {
+  color: red;
+  align-self: flex-end;
+  max-width: 675px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.fullscreen_container {
+  height: 100%;
+}
+.forward_container {
+  position: relative;
+  z-index: 2;
+}
+
+.number {
+  font-family: "Colus";
+  color: #ff6501;
+  margin-right: 6px;
+}
+.section__subtitle--orange {
+  color: #ff6501;
+}
+
+//Font sizes
+
+.h1_font_size {
+  font-size: 96px;
+}
+
+.h2_font_size {
+  font-size: 48px;
+}
+
+.h3_font_size {
+  font-size: 36px;
+}
+
+.menu_font_size {
+  font-size: 20px;
+}
+
+.text_font_size {
+  font-size: 18px;
+}
+
+.bnt_font_size {
+  font-size: 16px;
+}
+
+.subtext_font_size {
+  font-size: 16px;
+}
+.feature__text {
+  font-size: 20px;
+}
+.number {
+  font-size: 36px;
+}
+
+// bg
+.background_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// buttons
+.section__btns.mobile_show {
+  display: none;
+}
+.mobile_hide {
+}
+
+//filled
+.header {
+  transition: top 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.filled {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #fff;
+}
+.header.filled {
+  position: fixed;
+}
+
+.header.hide {
+  top: -100px;
+}
+.header.visible {
+  top: 0;
+}
+
+// modal
+.modal_window {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(19, 112, 181, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  form {
+    background-color: rgba(19, 112, 181, 1);
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 30px;
+    position: relative;
+  }
+}
+.modal_window.active {
+  display: flex;
+}
+.close_btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: transparent;
+  top: -40px;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  span:nth-child(1) {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 14px;
+    right: 0;
+    transform: rotate(-45deg);
+  }
+  span:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 14px;
+    right: 0;
+    transform: rotate(45deg);
+  }
+}

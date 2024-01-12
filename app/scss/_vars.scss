@@ -1,0 +1,50 @@
+// %AnPro-Regular {
+//   font-family: 'AnonymousPro-Regular', sans-serif;
+//   font-weight: normal;
+//   display: swap;
+// }
+
+// %AnPro-Bold {
+//   font-family: 'AnonymousPro-Bold', sans-serif;
+//   font-weight: 700
+// }
+
+// %AlGrey-Bold {
+//   font-family: 'AlegreyaSC-Bold', sans-serif;
+//   font-weight: 700;
+// }
+
+%general_text {
+  color: #fff;
+}
+
+%title {
+  @extend %general_text;
+  text-transform: uppercase;
+}
+
+%montserrat_text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @extend %general_text;
+}
+
+%upper_frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+%lower_frame {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+// $blue: #ABD0D3;
+// $text: #F2F1ED;
+// $background: #3B3B3B;
+// $line: #BCB3A9;
