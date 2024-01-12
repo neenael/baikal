@@ -3,18 +3,28 @@ let prevScrollPos = window.pageYOffset;
 
 const header = document.querySelector(".header");
 
+
+
+const hideMenu = () => {
+  console.warn("работаю");
+  header.classList.add("hide");
+  header.classList.remove("visible");
+}
+const showMenu = () => {
+  header.classList.add("visible");
+  header.classList.add("filled");
+  header.classList.remove("hide");
+}
+
 window.onscroll = function () {
   let currentScrollPos = window.pageYOffset;
+  console.log(currentScrollPos)
 
   if (prevScrollPos > currentScrollPos) {
-    header.classList.add("visible");
-    header.classList.add("filled");
-    header.classList.remove("hide");
+    showMenu()
   } else {
-    if (window.scrollY >= 10) {
-      console.warn("работаю");
-      header.classList.add("hide");
-      header.classList.remove("visible");
+    if (window.scrollY >= 10 && !document.querySelector(".header__burger").classList.contains("active")) {
+      hideMenu()
     }
   }
   console.log(window.scrollY);
@@ -66,14 +76,32 @@ const burgerChB = document.getElementById("burger");
 const burgerMenu = document.getElementById("burger_menu");
 
 const openBuregerMenu = () => {
+  
+
   burgerMenu.classList.add("active");
   document.body.style.overflow = "hidden";
+
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    document.body.classList.add("side_shift");
+    header.classList.add("side_shift");
+    
+  }
+
 };
 
 const closeBurgerMenu = () => {
   burgerMenu.classList.remove("active");
   document.body.style.overflow = "visible";
   burgerChB.checked = false;
+
+
+
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.body.classList.remove("side_shift");
+    header.classList.remove("side_shift");
+  }
+
+
 };
 
 if (burgerChB) {
@@ -99,12 +127,15 @@ const closeBtn = document.querySelector(".close_btn");
 
 const openModalWindow = () => {
   modalWindow.classList.add("active");
+
   document.body.style.overflow = "hidden";
 };
 
 const closeModalWindow = () => {
   modalWindow.classList.remove("active");
   document.body.style.overflow = "visible";
+
+
 };
 
 modalWindowBtns.forEach((btn) => {

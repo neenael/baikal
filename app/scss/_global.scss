@@ -8,6 +8,21 @@ body {
 html {
   scroll-behavior: smooth;
 }
+// scroll
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-track{
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+::-webkit-scrollbar-thumb{
+  background-color: #ff6501;
+  border-radius: 5px;
+}
+.side_shift{
+  margin-right: 8px;
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -110,6 +125,7 @@ footer {
   @extend %upper_frame;
   width: 59%;
   min-width: 1075px;
+  pointer-events: none;
 }
 .upper_content_small {
   max-width: 788px;
@@ -135,13 +151,13 @@ footer {
 }
 .lower_frame_large {
   @extend %lower_frame;
-  width: 1020px;
+  width: 964px;
+  pointer-events: none;
   // min-width: 973px;
   // width: 45%;
   // min-width: 522px;
 }
 .lower_content_large {
-  color: red;
   align-self: flex-end;
   max-width: 675px;
   max-height: 300px;

@@ -2742,6 +2742,24 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff6501;
+  border-radius: 5px;
+}
+
+.side_shift {
+  margin-right: 8px;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2847,6 +2865,7 @@ footer {
 .upper_frame_small {
   width: 59%;
   min-width: 1075px;
+  pointer-events: none;
 }
 
 .upper_content_small {
@@ -2870,11 +2889,11 @@ footer {
 }
 
 .lower_frame_large {
-  width: 1020px;
+  width: 964px;
+  pointer-events: none;
 }
 
 .lower_content_large {
-  color: red;
   -ms-flex-item-align: end;
       align-self: flex-end;
   max-width: 675px;
@@ -3429,10 +3448,18 @@ ul.about__features {
 .location__content--upper {
   z-index: 2;
   position: relative;
+  pointer-events: none;
+}
+.location__content--upper * {
+  pointer-events: none;
 }
 
 .location__content--lower {
   z-index: 2;
+  pointer-events: none;
+}
+.location__content--lower * {
+  pointer-events: none;
 }
 .location__content--lower .section__subtitle {
   text-align: right;

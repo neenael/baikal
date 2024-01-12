@@ -297,6 +297,10 @@ ul.about__features {
   // max-width: 46%;
   // max-height: 180px;
   // overflow-y: auto;
+  pointer-events: none;
+  *{
+    pointer-events: none;
+  }
 }
 
 .location__frame--lower {
@@ -307,6 +311,10 @@ ul.about__features {
   // align-self: flex-end;
   // max-width: 45%;
   z-index: 2;
+  pointer-events: none;
+  *{
+    pointer-events: none;
+  }
   // max-height: 300px;
   // overflow-y: auto;
 
